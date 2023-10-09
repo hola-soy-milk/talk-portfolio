@@ -1,0 +1,37 @@
+---
+import Repo from "../types/Repo";
+import { Image } from "astro:assets";
+
+export interface Props {
+  repo: Repo;
+}
+
+const {
+  ogImage: { url, height, width },
+  name,
+  html_url,
+} = Astro.props.repo;
+---
+
+<a href={html_url}>
+  <Image src={url} height={Number(height)} width={Number(width)} alt={name} />
+</a>
+
+<style>
+  img {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 10px;
+  }
+  a {
+    border-radius: 10px;
+  }
+  a:hover {
+    background: var(--accent-gradient);
+  }
+  img:hover {
+    opacity: 0.5
+  }
+</style>
