@@ -10,8 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astro-community/astro-embed-youtube": "^0.4.1",
     "@astrojs/preact": "^3.0.1",
     "astro": "^3.2.3",
+    "open-graph-scraper": "^6.3.0",
     "preact": "^10.18.1"
   }
 }
